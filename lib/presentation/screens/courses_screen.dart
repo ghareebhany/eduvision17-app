@@ -753,9 +753,9 @@ class _BundleCardState extends State<_BundleCard> {
                         const SizedBox(height: 8),
                         _MiniProgressDark(courses: b.courses),
                       ],
-                      const Spacer(),
-                      Divider(height: 1, color: line),
-                      const SizedBox(height: 8),
+const SizedBox(height: 10),
+Divider(height: 1, color: line),
+const SizedBox(height: 8),
                       Row(children: [
                         Container(
                           padding: const EdgeInsets.symmetric(
