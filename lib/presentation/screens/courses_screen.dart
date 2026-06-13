@@ -725,24 +725,6 @@ class _BundleCardState extends State<_BundleCard> {
                               fontWeight: FontWeight.w800,
                               color: ink,
                               height: 1.35)),
-                      const SizedBox(height: 7),
-                      Row(children: [
-                        const Icon(Icons.workspace_premium_rounded,
-                            size: 13, color: _coral),
-                        const SizedBox(width: 4),
-                        Expanded(
-                          child: Text(
-                              b.courses.isNotEmpty
-                                  ? b.courses.first.title
-                                  : 'حزمة تعليمية متكاملة',
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                  fontSize: 10.5,
-                                  fontWeight: FontWeight.w600,
-                                  color: mut)),
-                        ),
-                      ]),
                       if (b.isEnrolled) ...[
                         const SizedBox(height: 9),
                         _MiniProgressDark(courses: b.courses),
@@ -751,32 +733,44 @@ class _BundleCardState extends State<_BundleCard> {
                       Divider(height: 1, color: line),
                       const SizedBox(height: 7),
                       Row(children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 11, vertical: 7),
-                          decoration: BoxDecoration(
-                            gradient: AppTheme.ctaGradient,
-                            borderRadius: BorderRadius.circular(10),
+                        Expanded(
+                          flex: 2,
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(vertical: 7),
+                            decoration: BoxDecoration(
+                              gradient: AppTheme.ctaGradient,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('اشترك',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 10.5,
+                                        fontWeight: FontWeight.w800)),
+                                SizedBox(width: 3),
+                                Icon(Icons.arrow_back_ios_rounded,
+                                    size: 9, color: Colors.white),
+                              ]),
                           ),
-                          child: const Row(mainAxisSize: MainAxisSize.min, children: [
-                            Text('اشترك',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10.5,
-                                    fontWeight: FontWeight.w800)),
-                            SizedBox(width: 3),
-                            Icon(Icons.arrow_back_ios_rounded,
-                                size: 9, color: Colors.white),
-                          ]),
                         ),
-                        const Spacer(),
-                        Icon(Icons.menu_book_rounded, size: 13, color: mut),
-                        const SizedBox(width: 3),
-                        Text('${b.courseCount} دورة',
-                            style: TextStyle(
-                                fontSize: 10.5,
-                                fontWeight: FontWeight.w700,
-                                color: mut)),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          flex: 1,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.menu_book_rounded, size: 13, color: mut),
+                              const SizedBox(height: 2),
+                              Text('${b.courseCount} دورة',
+                                  style: TextStyle(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w700,
+                                      color: mut)),
+                            ],
+                          ),
+                        ),
                       ]),
                     ],
                   ),
