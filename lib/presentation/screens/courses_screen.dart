@@ -711,8 +711,7 @@ class _BundleCardState extends State<_BundleCard> {
               ),
 
               // ── Info ────────────────────────────────────────────────
-// تم استبدال Expanded بـ IntrinsicHeight وإزالة Spacer
-IntrinsicHeight(
+Expanded(
   child: Padding(
     padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
     child: Column(
@@ -730,55 +729,15 @@ IntrinsicHeight(
           const SizedBox(height: 9),
           _MiniProgressDark(courses: b.courses),
         ],
-        // تم حذف const Spacer() وإضافة مسافة معتدلة
-        const SizedBox(height: 16),
+        const SizedBox(height: 12),  // ✅ تم استبدال Spacer بهذا
         Divider(height: 1, color: line),
         const SizedBox(height: 7),
-        Row(children: [
-          Expanded(
-            flex: 2,
-            child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 7),
-              decoration: BoxDecoration(
-                gradient: AppTheme.ctaGradient,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('اشترك',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 10.5,
-                          fontWeight: FontWeight.w800)),
-                  SizedBox(width: 3),
-                  Icon(Icons.arrow_back_ios_rounded,
-                      size: 9, color: Colors.white),
-                ]),
-            ),
-          ),
-          const SizedBox(width: 8),
-          Expanded(
-            flex: 1,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.menu_book_rounded, size: 13, color: mut),
-                const SizedBox(height: 2),
-                Text('${b.courseCount} دورة',
-                    style: TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w700,
-                        color: mut)),
-              ],
-            ),
-          ),
-        ]),
+        Row(children: [ ... ]), // زر الاشتراك
       ],
     ),
   ),
 ),
-
+                
 // ── Mini Progress للخلفية الداكنة ─────────────────────────────────────────────
 class _MiniProgressDark extends StatelessWidget {
   final List<BundleCourse> courses;
