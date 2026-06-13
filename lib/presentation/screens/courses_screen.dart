@@ -762,7 +762,7 @@ class _BundleCardState extends State<_BundleCard> {
                             Text('اشترك',
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 10.5,
+                                    fontSize: 12,
                                     fontWeight: FontWeight.w800)),
                             SizedBox(width: 3),
                             Icon(Icons.arrow_back_ios_rounded,
@@ -772,9 +772,9 @@ class _BundleCardState extends State<_BundleCard> {
                         const Spacer(),
                         Icon(Icons.menu_book_rounded, size: 13, color: mut),
                         const SizedBox(width: 3),
-                        Text('${b.courseCount} دورة',
+                        Text('${b.courseCount} درس',
                             style: TextStyle(
-                                fontSize: 10.5,
+                                fontSize: 12,
                                 fontWeight: FontWeight.w700,
                                 color: mut)),
                       ]),
