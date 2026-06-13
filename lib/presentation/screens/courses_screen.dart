@@ -377,9 +377,9 @@ class _CoursesScreenState extends ConsumerState<CoursesScreen> {
                   sliver: SliverGrid(
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      mainAxisSpacing: 14,
-                      crossAxisSpacing: 14,
-                      childAspectRatio: 0.72,
+                      mainAxisSpacing: 16,
+                      crossAxisSpacing: 16,
+                      childAspectRatio: 0.65,
                     ),
                     delegate: SliverChildBuilderDelegate(
                       (_, i) => _FadeSlideIn(
@@ -652,7 +652,7 @@ class _BundleCardState extends State<_BundleCard> {
             children: [
               // ── Thumbnail ───────────────────────────────────────────
               AspectRatio(
-                aspectRatio: 16 / 10,
+                aspectRatio: 16 / 9,
                 child: Stack(fit: StackFit.expand, children: [
                   b.thumbnail.isNotEmpty
                       ? CachedNetworkImage(
@@ -713,7 +713,7 @@ class _BundleCardState extends State<_BundleCard> {
               // ── Info ────────────────────────────────────────────────
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(11, 9, 11, 10),
+                  padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -724,8 +724,8 @@ class _BundleCardState extends State<_BundleCard> {
                               fontSize: 13,
                               fontWeight: FontWeight.w800,
                               color: ink,
-                              height: 1.3)),
-                      const SizedBox(height: 6),
+                              height: 1.35)),
+                      const SizedBox(height: 7),
                       Row(children: [
                         const Icon(Icons.workspace_premium_rounded,
                             size: 13, color: _coral),
@@ -744,16 +744,16 @@ class _BundleCardState extends State<_BundleCard> {
                         ),
                       ]),
                       if (b.isEnrolled) ...[
-                        const SizedBox(height: 8),
+                        const SizedBox(height: 9),
                         _MiniProgressDark(courses: b.courses),
                       ],
                       const Spacer(),
                       Divider(height: 1, color: line),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: 7),
                       Row(children: [
                         Container(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 6),
+                              horizontal: 11, vertical: 7),
                           decoration: BoxDecoration(
                             gradient: AppTheme.ctaGradient,
                             borderRadius: BorderRadius.circular(10),
@@ -762,7 +762,7 @@ class _BundleCardState extends State<_BundleCard> {
                             Text('اشترك',
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 12,
+                                    fontSize: 10.5,
                                     fontWeight: FontWeight.w800)),
                             SizedBox(width: 3),
                             Icon(Icons.arrow_back_ios_rounded,
@@ -772,9 +772,9 @@ class _BundleCardState extends State<_BundleCard> {
                         const Spacer(),
                         Icon(Icons.menu_book_rounded, size: 13, color: mut),
                         const SizedBox(width: 3),
-                        Text('${b.courseCount} درس',
+                        Text('${b.courseCount} دورة',
                             style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 10.5,
                                 fontWeight: FontWeight.w700,
                                 color: mut)),
                       ]),
