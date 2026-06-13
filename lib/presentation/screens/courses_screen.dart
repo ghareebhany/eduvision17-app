@@ -638,12 +638,6 @@ class _BundleCardState extends State<_BundleCard> {
           decoration: BoxDecoration(
             color: surf,
             borderRadius: BorderRadius.circular(18),
-            border: Border.all(
-              color: b.isEnrolled
-                  ? AppTheme.success.withValues(alpha: 0.55)
-                  : line,
-              width: b.isEnrolled ? 1.4 : 1,
-            ),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: isDark ? 0.35 : 0.07),
@@ -753,9 +747,9 @@ class _BundleCardState extends State<_BundleCard> {
                         const SizedBox(height: 8),
                         _MiniProgressDark(courses: b.courses),
                       ],
-const SizedBox(height: 10),
-Divider(height: 1, color: line),
-const SizedBox(height: 8),
+                      const Spacer(),
+                      Divider(height: 1, color: line),
+                      const SizedBox(height: 4),
                       Row(children: [
                         Container(
                           padding: const EdgeInsets.symmetric(
@@ -765,7 +759,7 @@ const SizedBox(height: 8),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: const Row(mainAxisSize: MainAxisSize.min, children: [
-                            Text('التفاصيل',
+                            Text('اشترك',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 10.5,
