@@ -519,6 +519,28 @@ class _MyCourseCardState extends State<_MyCourseCard> {
                             ]),
                       )),
 
+                // Rating pill
+                if (course.rating > 0)
+                  Positioned(
+                      top: 11, right: 11,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 9, vertical: 5),
+                        decoration: BoxDecoration(
+                            color: Colors.black.withValues(alpha: 0.45),
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Row(mainAxisSize: MainAxisSize.min, children: [
+                          const Icon(Icons.star_rounded,
+                              size: 12, color: Color(0xFFF5A623)),
+                          const SizedBox(width: 3),
+                          Text(course.rating.toStringAsFixed(1),
+                              style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10.5,
+                                  fontWeight: FontWeight.bold)),
+                        ]),
+                      )),
+
                 // Lesson count
                 Positioned(
                     bottom: 9, right: 11,
@@ -558,7 +580,7 @@ class _MyCourseCardState extends State<_MyCourseCard> {
 
               // ── Info ─────────────────────────────────────────────────
               Padding(
-                padding: const EdgeInsets.fromLTRB(15, 13, 15, 14),
+                padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -585,7 +607,7 @@ class _MyCourseCardState extends State<_MyCourseCard> {
                     ),
                   ]),
 
-                  const SizedBox(height: 13),
+                  const SizedBox(height: 14),
 
                   // ── Progress details ─────────────────────────────────
                   if (!isCompleted) ...[
@@ -615,7 +637,7 @@ class _MyCourseCardState extends State<_MyCourseCard> {
                                   : AppPalette.coral,
                               fontSize: 13)),
                     ]),
-                    const SizedBox(height: 5),
+                    const SizedBox(height: 6),
                     Row(children: [
                       Icon(Icons.check_circle_outline,
                           size: 12,
@@ -627,7 +649,7 @@ class _MyCourseCardState extends State<_MyCourseCard> {
                               fontSize: 11,
                               color: AppPalette.textSecondary(context))),
                     ]),
-                    const SizedBox(height: 13),
+                    const SizedBox(height: 14),
                   ],
 
                   // ── Action button ────────────────────────────────────
